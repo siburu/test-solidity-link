@@ -13,3 +13,7 @@ link1:
 .PHONY: link2
 link2:
 	solc --link --libraries library2.sol:L2=0x9999999999888888888877777777776666666666 build/C.bin
+
+.PHONY: link-for-lib
+link-for-lib:
+	solc --link --libraries library-for-library.sol:LL=0x1010101010101010101010101010101010101010 build/L2.bin
