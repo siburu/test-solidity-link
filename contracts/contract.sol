@@ -9,7 +9,7 @@ contract C {
     uint public y;
 
     function f(uint a, uint b) public {
-        x = L1.f(a, b);
-        y = L2.g(a, b);
+        x = L1.f_internal(a, b);
+        y = L2.f_public(a, b);
     }
 }

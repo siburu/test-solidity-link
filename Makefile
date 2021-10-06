@@ -6,14 +6,14 @@ compile:
 clean:
 	rm -rf ./build
 
-.PHONY: link1
-link1:
-	solc --link --libraries library1.sol:L1=0x1111111111222222222233333333334444444444 build/C.bin
+.PHONY: link-lib3-to-lib2
+link-lib3-to-lib2:
+	solc --link --libraries library3.sol:L3=0x1010101010101010101010101010101010101010 build/L2.bin
 
-.PHONY: link2
-link2:
-	solc --link --libraries library2.sol:L2=0x9999999999888888888877777777776666666666 build/C.bin
+.PHONY: link-lib2-to-contract
+link-lib2-to-contract:
+	solc --link --libraries library2.sol:L2=0xf0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0 build/C.bin
 
-.PHONY: link-for-lib
-link-for-lib:
-	solc --link --libraries library-for-library.sol:LL=0x1010101010101010101010101010101010101010 build/L2.bin
+.PHONY: link-lib3-to-contract
+link-lib3-to-contract:
+	solc --link --libraries library3.sol:L3=0x1010101010101010101010101010101010101010 build/C.bin
